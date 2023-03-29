@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c48fm52432m80"]
+
+[ext_resource type="PackedScene" uid="uid://bubn2anfw6bv3" path="res://Entities/Player/player.tscn" id="1_a6004"]
+[ext_resource type="PackedScene" uid="uid://bn1mvc2djblpd" path="res://background.tscn" id="2_pquai"]
+
+[node name="MainLevel" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_a6004")]
+position = Vector2(570, 368)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Background" parent="." instance=ExtResource("2_pquai")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(570, 368)
